@@ -1,0 +1,1112 @@
+// =============================================================
+// VARIABLES
+// =============================================================
+
+// Color -------------------------------------------------------
+// Neutrals are warmed slightly (blue-charcoal instead of near-black)
+// so text and chrome feel softer than pure black/gray.
+$color-bg-primary:        #FFFFFF;
+$color-bg-secondary:      #F6F7F9;
+$color-bg-card:           #FFFFFF;
+$color-border-subtle:     #E7E9EF;
+
+$color-text-primary:      #262B36; // was #12141A — softened, warm charcoal
+$color-text-secondary:    #5B6472; // was #6B7280 — slightly warmer, ~7:1 on white
+$color-text-tertiary:     #8F98A6; // was #9CA3AF
+
+// Core accents
+$color-accent-blue:       #3A5CFF;
+$color-accent-blue-soft:  #EEF1FF;
+$color-accent-purple:     #8B5CF6;
+$color-accent-purple-soft:#F5F1FF;
+
+// Secondary accents — added for a richer, less monochrome palette.
+// Used sparingly via explicit modifier classes (icon chips, accent bars,
+// timeline nodes) so color stays intentional, not decorative noise.
+$color-accent-amber:      #E8983D;
+$color-accent-amber-soft: #FDF3E4;
+$color-accent-teal:       #2BB8A8;
+$color-accent-teal-soft:  #E4F7F4;
+
+// Neutral icon chip (used where a colored accent isn't appropriate)
+$color-icon-neutral-fg:   #4B5568;
+$color-icon-neutral-bg:   #EEF0F3;
+
+$color-success:           #22C55E;
+
+$gradient-hero: linear-gradient(135deg, $color-accent-blue 0%, $color-accent-purple 100%);
+
+// Spacing (8px system) -----------------------------------------
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 16px;
+$space-4: 24px;
+$space-5: 32px;
+$space-6: 48px;
+$space-7: 64px;
+$space-8: 96px;
+$space-9: 128px;
+
+// Radius ---------------------------------------------------------
+$radius-sm:   8px;
+$radius-md:   16px;
+$radius-lg:   24px;
+$radius-xl:   32px;
+$radius-full: 999px;
+
+// Typography ------------------------------------------------------
+$font-display: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-mono:    'Geist Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+$fs-1: 64px; // hero title
+$fs-2: 48px; // section title
+$fs-3: 32px;
+$fs-4: 24px; // card title
+$fs-5: 18px; // subtitle
+$fs-6: 16px; // body
+$fs-7: 14px; // small body
+$fs-8: 13px; // caption / mono
+
+// Shadows -----------------------------------------------------------
+$shadow-sm: 0 1px 2px rgba(38, 43, 54, 0.04);
+$shadow-md: 0 4px 16px rgba(38, 43, 54, 0.06);
+$shadow-lg: 0 12px 32px rgba(38, 43, 54, 0.08);
+$shadow-glow-blue: 0 8px 40px rgba(58, 92, 255, 0.18);
+
+// Transitions ----------------------------------------------------------
+// Three distinct easing curves for three distinct motion contexts —
+// keeps every animation on-site feeling deliberate rather than default.
+$ease-standard:      cubic-bezier(0.16, 1, 0.3, 1);   // entrances / scroll reveal
+$ease-smooth:         cubic-bezier(0.22, 1, 0.36, 1);  // hover interactions
+$ease-in-out-smooth:  cubic-bezier(0.65, 0, 0.35, 1);  // symmetric open/close motion
+
+$duration-fast:   180ms;
+$duration-base:   350ms;
+$duration-slow:   550ms;
+$duration-slower: 700ms;
+
+// Z-index -----------------------------------------------------------------
+$z-base:         0;
+$z-shapes:       1;
+$z-card:         10;
+$z-hero-content: 20;
+
+// Breakpoints ----------------------------------------------------------------
+$bp-tablet: 1024px;
+$bp-mobile: 640px;
+
+@mixin bp($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+// =============================================================
+// BASE / RESET
+// =============================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  font-size: $fs-6;
+  line-height: 1.5;
+  color: $color-text-primary;
+  background: $color-bg-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid $color-accent-blue;
+  outline-offset: 3px;
+  border-radius: $radius-sm;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// =============================================================
+// KEYFRAMES
+// =============================================================
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-24px, 20px) scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+// =============================================================
+// LAYOUT UTILITIES
+// =============================================================
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-5;
+
+  @include bp($bp-mobile) {
+    padding: 0 $space-4;
+  }
+}
+
+section {
+  padding: $space-8 0;
+
+  @include bp($bp-tablet) {
+    padding: $space-7 0;
+  }
+}
+
+.about,
+.certifications,
+.contact {
+  background: $color-bg-secondary;
+}
+
+// =============================================================
+// SCROLL REVEAL
+// =============================================================
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity $duration-slow $ease-standard, transform $duration-slow $ease-standard;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// =============================================================
+// TYPE / SECTION HEADERS
+// =============================================================
+
+.eyebrow {
+  display: inline-block;
+  font-family: $font-mono;
+  font-size: $fs-8;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $color-accent-blue;
+  margin-bottom: $space-3;
+}
+
+.section-title {
+  font-family: $font-display;
+  font-size: $fs-2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: $color-text-primary;
+
+  @include bp($bp-tablet) {
+    font-size: $fs-3;
+  }
+}
+
+.section-subtitle {
+  font-size: $fs-5;
+  color: $color-text-secondary;
+  margin-top: $space-3;
+  max-width: 560px;
+}
+
+.section-header {
+  margin-bottom: $space-7;
+}
+
+// =============================================================
+// ICON CHIP
+// -------------------------------------------------------------
+// Reusable soft-background icon container. Wrapping icons in a
+// tinted circle (rather than placing a saturated stroke icon
+// directly on white) is what keeps icons feeling soft/premium
+// instead of harsh. Color is applied via explicit modifier so
+// it stays easy to reassign per instance.
+// =============================================================
+
+.icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-md;
+  flex-shrink: 0;
+  transition: transform $duration-base $ease-smooth;
+
+  i {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--blue    { background: $color-accent-blue-soft;   color: $color-accent-blue; }
+  &--purple  { background: $color-accent-purple-soft; color: $color-accent-purple; }
+  &--amber   { background: $color-accent-amber-soft;  color: $color-accent-amber; }
+  &--teal    { background: $color-accent-teal-soft;   color: $color-accent-teal; }
+  &--neutral { background: $color-icon-neutral-bg;    color: $color-icon-neutral-fg; }
+}
+
+// =============================================================
+// ACCENT BAR (utility)
+// -------------------------------------------------------------
+// Thin top-border accent used on project/certification cards to
+// bring in secondary accent colors without touching card content.
+// =============================================================
+
+.accent-bar {
+  border-top: 3px solid transparent;
+
+  &--blue   { border-top-color: $color-accent-blue; }
+  &--purple { border-top-color: $color-accent-purple; }
+  &--amber  { border-top-color: $color-accent-amber; }
+  &--teal   { border-top-color: $color-accent-teal; }
+}
+
+// =============================================================
+// BADGES
+// =============================================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-family: $font-mono;
+  font-size: $fs-8;
+  font-weight: 500;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  white-space: nowrap;
+
+  &--status {
+    background: $color-accent-blue-soft;
+    color: $color-accent-blue;
+    border: 1px solid rgba(58, 92, 255, 0.15);
+  }
+
+  &--tag {
+    background: $color-bg-secondary;
+    color: $color-text-secondary;
+    border: 1px solid $color-border-subtle;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-success;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+    animation: pulse-dot 2.6s ease-in-out infinite;
+  }
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  list-style: none;
+  padding: 0;
+  margin: $space-3 0;
+}
+
+// =============================================================
+// BUTTONS
+// =============================================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-family: $font-body;
+  font-size: $fs-6;
+  font-weight: 600;
+  padding: $space-3 $space-5;
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform $duration-base $ease-smooth,
+              box-shadow $duration-base $ease-smooth,
+              background $duration-base $ease-smooth,
+              color $duration-base $ease-smooth,
+              border-color $duration-base $ease-smooth;
+
+  i {
+    width: 18px;
+    height: 18px;
+  }
+
+  &--primary {
+    background: $color-text-primary;
+    color: #fff;
+    box-shadow: $shadow-md;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+      background: $color-accent-blue;
+      box-shadow: $shadow-lg, $shadow-glow-blue;
+    }
+  }
+
+  &--secondary {
+    background: $color-bg-card;
+    color: $color-text-primary;
+    border-color: $color-border-subtle;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: $color-accent-blue;
+      color: $color-accent-blue;
+      box-shadow: $shadow-md;
+    }
+  }
+}
+
+// =============================================================
+// HERO
+// =============================================================
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: $space-8 0;
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: $z-base;
+    pointer-events: none;
+  }
+
+  &__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+    animation: drift 20s ease-in-out infinite;
+
+    &--blue {
+      width: 480px;
+      height: 480px;
+      background: $color-accent-blue;
+      top: -140px;
+      right: 8%;
+    }
+
+    &--purple {
+      width: 420px;
+      height: 420px;
+      background: $color-accent-purple;
+      bottom: -120px;
+      left: 4%;
+      animation-delay: -10s;
+    }
+  }
+
+  &__token {
+    position: absolute;
+    z-index: $z-shapes;
+    font-family: $font-mono;
+    font-size: $fs-8;
+    font-weight: 500;
+    padding: $space-1 $space-3;
+    border-radius: $radius-full;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid $color-border-subtle;
+    box-shadow: $shadow-sm;
+    color: $color-text-secondary;
+    animation: float 8s ease-in-out infinite;
+
+    &--1 { top: 10%;  right: 34%; }
+    &--2 { top: 56%;  right: 4%;  animation-delay: -2.5s; }
+    &--3 { bottom: 8%; right: 40%; animation-delay: -5s; }
+
+    @include bp($bp-tablet) {
+      display: none;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: $z-hero-content;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: $space-7;
+    align-items: center;
+
+    @include bp($bp-tablet) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-1;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: $color-text-primary;
+    margin: $space-4 0;
+
+    @include bp($bp-tablet) {
+      font-size: 44px;
+    }
+
+    @include bp($bp-mobile) {
+      font-size: 34px;
+    }
+  }
+
+  &__name {
+    background: $gradient-hero;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__subtitle {
+    font-size: $fs-5;
+    color: $color-text-secondary;
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: $space-5;
+
+    @include bp($bp-tablet) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-3;
+    flex-wrap: wrap;
+
+    @include bp($bp-tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__portrait-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__portrait {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 5;
+    border-radius: $radius-xl;
+    overflow: hidden;
+    box-shadow: $shadow-lg, $shadow-glow-blue;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// =============================================================
+// ABOUT
+// =============================================================
+
+.about {
+  &__grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: $space-7;
+    align-items: start;
+
+    @include bp($bp-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__media img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+
+    @include bp($bp-tablet) {
+      aspect-ratio: 16 / 9;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+
+  &__bio {
+    font-size: $fs-6;
+    color: $color-text-secondary;
+    line-height: 1.7;
+    margin-bottom: $space-4;
+  }
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-3;
+  margin-top: $space-6;
+
+  @include bp($bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strength-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-md;
+  padding: $space-4;
+  transition: transform $duration-base $ease-smooth, box-shadow $duration-base $ease-smooth;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+  }
+
+  .icon-chip {
+    margin-bottom: $space-3;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-6;
+    font-weight: 600;
+    margin-bottom: $space-1;
+  }
+
+  &__text {
+    font-size: $fs-7;
+    color: $color-text-secondary;
+    line-height: 1.5;
+  }
+}
+
+// =============================================================
+// PROJECTS
+// =============================================================
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-5;
+
+  @include bp($bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform $duration-base $ease-smooth, box-shadow $duration-base $ease-smooth;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $shadow-lg;
+
+    .project-card__media img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $duration-slower $ease-smooth;
+    }
+  }
+
+  &__body {
+    padding: $space-5;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-4;
+    font-weight: 600;
+    margin-bottom: $space-2;
+  }
+
+  &__text {
+    font-size: $fs-7;
+    color: $color-text-secondary;
+    line-height: 1.6;
+    margin-bottom: $space-3;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    font-size: $fs-7;
+    font-weight: 600;
+    color: $color-accent-blue;
+    text-decoration: none;
+    transition: color $duration-base $ease-smooth;
+
+    i {
+      width: 16px;
+      height: 16px;
+      transition: transform $duration-base $ease-smooth;
+    }
+
+    &:hover i {
+      transform: translateX(4px);
+    }
+  }
+}
+
+// =============================================================
+// EXPERIENCE / TIMELINE
+// =============================================================
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  max-width: 760px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: $color-border-subtle;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: $space-7;
+    margin-bottom: $space-6;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include bp($bp-mobile) {
+      padding-left: $space-6;
+    }
+  }
+
+  &__node {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $color-bg-card;
+    border: 2px solid $color-accent-blue;
+    box-shadow: 0 0 0 4px $color-accent-blue-soft;
+
+    &--blue   { border-color: $color-accent-blue;   box-shadow: 0 0 0 4px $color-accent-blue-soft; }
+    &--purple { border-color: $color-accent-purple; box-shadow: 0 0 0 4px $color-accent-purple-soft; }
+    &--amber  { border-color: $color-accent-amber;  box-shadow: 0 0 0 4px $color-accent-amber-soft; }
+    &--teal   { border-color: $color-accent-teal;   box-shadow: 0 0 0 4px $color-accent-teal-soft; }
+  }
+
+  &__card {
+    background: $color-bg-card;
+    border: 1px solid $color-border-subtle;
+    border-radius: $radius-lg;
+    padding: $space-5;
+    transition: box-shadow $duration-base $ease-smooth;
+
+    &:hover {
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $space-3;
+    margin-bottom: $space-3;
+    flex-wrap: wrap;
+  }
+
+  &__role {
+    font-family: $font-display;
+    font-size: $fs-4;
+    font-weight: 600;
+  }
+
+  &__company {
+    color: $color-text-secondary;
+    font-size: $fs-6;
+    margin-top: 2px;
+  }
+
+  &__dates {
+    font-family: $font-mono;
+    font-size: $fs-8;
+    color: $color-text-tertiary;
+    white-space: nowrap;
+  }
+
+  // ---- Accordion: "Show details" -------------------------------
+  // A button (not native <details>) so the expand/collapse can be
+  // animated smoothly: height via grid-template-rows 0fr -> 1fr,
+  // combined with a fade + slide on the inner content. Toggled by
+  // a small script that flips aria-expanded and an .is-open class.
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-1;
+    font-family: $font-mono;
+    font-size: $fs-8;
+    font-weight: 500;
+    color: $color-accent-blue;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: $space-3;
+    cursor: pointer;
+    transition: color $duration-base $ease-smooth;
+
+    i {
+      width: 14px;
+      height: 14px;
+      transition: transform $duration-base $ease-smooth;
+    }
+
+    &:hover {
+      color: $color-accent-purple;
+    }
+
+    &.is-open i {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__details-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows $duration-slower $ease-in-out-smooth;
+
+    &.is-open {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__details-inner {
+    min-height: 0;
+  }
+
+  &__list {
+    padding-left: $space-4;
+    padding-top: $space-3;
+    color: $color-text-secondary;
+    font-size: $fs-7;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity $duration-base $ease-standard, transform $duration-base $ease-standard;
+
+    li {
+      margin-bottom: $space-2;
+    }
+  }
+
+  &__details-body.is-open &__list {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 150ms;
+  }
+}
+
+// =============================================================
+// CERTIFICATIONS
+// =============================================================
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-4;
+
+  @include bp($bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp($bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cert-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform $duration-base $ease-smooth, box-shadow $duration-base $ease-smooth;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: $shadow-lg;
+
+    .cert-card__media img {
+      transform: scale(1.06);
+    }
+  }
+
+  &__media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $duration-slower $ease-smooth;
+    }
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-7;
+    font-weight: 600;
+    padding: $space-3 $space-3 0;
+    line-height: 1.4;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $fs-8;
+    color: $color-text-secondary;
+    padding: $space-1 $space-3 $space-3;
+  }
+
+  &__date {
+    font-family: $font-mono;
+    color: $color-text-tertiary;
+  }
+}
+
+// =============================================================
+// TESTIMONIALS
+// =============================================================
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+
+  @include bp($bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-lg;
+  padding: $space-5;
+  transition: transform $duration-base $ease-smooth, box-shadow $duration-base $ease-smooth;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+  }
+
+  .icon-chip {
+    margin-bottom: $space-3;
+  }
+
+  &__quote {
+    display: block;
+    font-size: $fs-6;
+    color: $color-text-primary;
+    line-height: 1.6;
+    margin: 0 0 $space-4;
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: $fs-7;
+  }
+
+  &__role {
+    font-size: $fs-8;
+    color: $color-text-secondary;
+  }
+}
+
+// =============================================================
+// CONTACT
+// =============================================================
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-4;
+
+  @include bp($bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp($bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  background: $color-bg-card;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-lg;
+  padding: $space-5;
+  text-decoration: none;
+  color: inherit;
+  transition: transform $duration-base $ease-smooth,
+              box-shadow $duration-base $ease-smooth,
+              border-color $duration-base $ease-smooth;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+    border-color: $color-accent-blue;
+  }
+
+  .icon-chip {
+    margin-bottom: $space-1;
+  }
+
+  &__label {
+    font-family: $font-mono;
+    font-size: $fs-8;
+    color: $color-text-tertiary;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__value {
+    font-weight: 600;
+    font-size: $fs-6;
+    color: $color-text-primary;
+    word-break: break-word;
+  }
+}
+
+// =============================================================
+// FOOTER
+// =============================================================
+
+.footer {
+  padding: $space-6 0;
+  border-top: 1px solid $color-border-subtle;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $space-3;
+  }
+
+  &__copy {
+    font-size: $fs-8;
+    color: $color-text-tertiary;
+  }
+
+  &__socials {
+    display: flex;
+    gap: $space-3;
+
+    a {
+      color: $color-text-secondary;
+      transition: color $duration-base $ease-smooth;
+
+      &:hover {
+        color: $color-accent-blue;
+      }
+    }
+
+    i {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
