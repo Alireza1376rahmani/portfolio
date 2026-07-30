@@ -249,7 +249,7 @@ section {
 .btn--primary:hover {
   transform: translateY(-2px) scale(1.02);
   background: #3a5cff;
-  box-shadow: 0 12px 32px rgba(38, 43, 54, 0.08), 0 8px 40px rgba(58, 92, 255, 0.18);
+  box-shadow: 0 12px 32px rgba(38, 43, 54, 0.08), 0 8px 40px rgba(58, 92, 255, 0.38);
 }
 .btn--secondary {
   background: #ffffff;
@@ -413,7 +413,7 @@ section {
   border: 1px solid #e7e9ef;
   border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(38, 43, 54, 0.08), 0 8px 40px rgba(58, 92, 255, 0.18);
+  box-shadow: 0 12px 32px rgba(38, 43, 54, 0.08), 0 8px 40px rgba(58, 92, 255, 0.38);
   transform-style: preserve-3d;
   transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
@@ -467,7 +467,7 @@ section {
   align-items: center;
   gap: 48px;
   width: max-content;
-  animation: marquee 26s linear infinite;
+  animation: marquee 75s linear infinite;
 }
 .marquee__item {
   display: flex;
