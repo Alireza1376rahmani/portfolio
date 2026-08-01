@@ -5,7 +5,7 @@
 // sync manually so this page can be duplicated per-project and
 // shipped independently (no shared build step).
 // =============================================================
-
+// #region variables
 $color-bg-primary: #ffffff;
 $color-bg-secondary: #f6f7f9;
 $color-bg-card: #ffffff;
@@ -90,6 +90,7 @@ $z-lightbox: 100;
 
 $bp-tablet: 1024px;
 $bp-mobile: 640px;
+// #endregion
 
 @mixin bp($max) {
 	@media (max-width: $max) {
@@ -98,7 +99,7 @@ $bp-mobile: 640px;
 }
 
 // =============================================================
-// BASE / RESET
+// #region BASE / RESET
 // =============================================================
 
 *,
@@ -161,6 +162,7 @@ button {
 		scroll-behavior: auto !important;
 	}
 }
+// #endregion
 
 // =============================================================
 // KEYFRAMES
@@ -410,7 +412,7 @@ section {
 // =============================================================
 
 .back-nav-wrap {
-	padding: $space-5 0 0;
+	padding: 0 0 $space-5 0;
 }
 
 .back-nav {
