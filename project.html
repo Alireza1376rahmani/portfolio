@@ -1,666 +1,790 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vault — Personal Finance Dashboard | Alireza Rahmani</title>
-  <meta name="description" content="Case study: Vault, a personal finance dashboard built with React, TypeScript, and Redux Toolkit." />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vault — Personal Finance Dashboard | Alireza Rahmani</title>
+		<meta
+			name="description"
+			content="Case study: Vault, a personal finance dashboard built with React, TypeScript, and Redux Toolkit."
+		/>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
-  <link rel="stylesheet" href="project.css" />
-</head>
-<body>
+		<link rel="stylesheet" href="project.css" />
+	</head>
+	<body>
+		<!-- ============ BACK NAV ============ -->
 
-  <!-- ============ BACK NAV ============ -->
-  <div class="back-nav-wrap">
-    <div class="container">
-      <a href="index.html" class="back-nav">
-        <i data-lucide="arrow-left" aria-hidden="true"></i>
-        Back to Portfolio
-      </a>
-    </div>
-  </div>
+		<main>
+			<!-- ============ PROJECT HERO ============ -->
+			<section class="project-hero" id="hero">
+				<div class="project-hero__background" aria-hidden="true">
+					<div class="project-hero__glow project-hero__glow--blue"></div>
+					<div class="project-hero__glow project-hero__glow--purple"></div>
+				</div>
 
-  <main>
+				<div class="container">
+					<div class="back-nav-wrap">
+						<div class="container">
+							<a href="index.html" class="back-nav">
+								<i data-lucide="arrow-left" aria-hidden="true"></i>
+								Back to Portfolio
+							</a>
+						</div>
+					</div>
+					<div class="project-hero__container reveal">
+						<span class="eyebrow">Case Study — Personal Finance</span>
+						<h1 class="project-hero__title">Vault — Personal Finance Dashboard</h1>
+						<p class="project-hero__tagline">
+							A fast, secure dashboard that helps people track spending, budgets, and investments in one place — built
+							end to end as a solo front-end project.
+						</p>
 
-    <!-- ============ PROJECT HERO ============ -->
-    <section class="project-hero" id="hero">
-      <div class="project-hero__background" aria-hidden="true">
-        <div class="project-hero__glow project-hero__glow--blue"></div>
-        <div class="project-hero__glow project-hero__glow--purple"></div>
-      </div>
+						<div class="project-hero__actions">
+							<a href="#" class="btn btn--primary">
+								<i data-lucide="external-link" aria-hidden="true"></i>
+								View Live Site
+							</a>
+							<a href="#" class="btn btn--secondary">
+								<i data-lucide="github" aria-hidden="true"></i>
+								View on GitHub
+							</a>
+						</div>
 
-      <div class="container">
-        <div class="project-hero__container reveal">
-          <span class="eyebrow">Case Study — Personal Finance</span>
-          <h1 class="project-hero__title">Vault — Personal Finance Dashboard</h1>
-          <p class="project-hero__tagline">
-            A fast, secure dashboard that helps people track spending, budgets, and
-            investments in one place — built end to end as a solo front-end project.
-          </p>
+						<div class="project-hero__meta">
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Role</span>
+								<span class="project-hero__meta-value">Front-End Developer</span>
+							</div>
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Timeline</span>
+								<span class="project-hero__meta-value">4 months</span>
+							</div>
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Team</span>
+								<span class="project-hero__meta-value">Solo project</span>
+							</div>
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Platform</span>
+								<span class="project-hero__meta-value">Web</span>
+							</div>
+						</div>
+					</div>
 
-          <div class="project-hero__actions">
-            <a href="#" class="btn btn--primary">
-              <i data-lucide="external-link" aria-hidden="true"></i>
-              View Live Site
-            </a>
-            <a href="#" class="btn btn--secondary">
-              <i data-lucide="github" aria-hidden="true"></i>
-              View on GitHub
-            </a>
-          </div>
+					<div class="project-hero__showcase reveal">
+						<div class="browser-frame" id="tiltFrame">
+							<div class="browser-frame__bar">
+								<span class="browser-frame__dot"></span>
+								<span class="browser-frame__dot"></span>
+								<span class="browser-frame__dot"></span>
+								<span class="browser-frame__url">vault-finance.app</span>
+							</div>
+							<img
+								src="https://placehold.co/1400x820/EEF1FF/3A5CFF?text=Vault+Dashboard"
+								alt="Vault dashboard main screen showing spending overview"
+							/>
+						</div>
+					</div>
+				</div>
 
-          <div class="project-hero__meta">
-            <div class="project-hero__meta-item">
-              <span class="project-hero__meta-label">Role</span>
-              <span class="project-hero__meta-value">Front-End Developer</span>
-            </div>
-            <div class="project-hero__meta-item">
-              <span class="project-hero__meta-label">Timeline</span>
-              <span class="project-hero__meta-value">4 months</span>
-            </div>
-            <div class="project-hero__meta-item">
-              <span class="project-hero__meta-label">Team</span>
-              <span class="project-hero__meta-value">Solo project</span>
-            </div>
-            <div class="project-hero__meta-item">
-              <span class="project-hero__meta-label">Platform</span>
-              <span class="project-hero__meta-value">Web</span>
-            </div>
-          </div>
-        </div>
+				<!-- "Built with" ticker -->
+				<div class="marquee" aria-hidden="true">
+					<div class="marquee__track">
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<!-- duplicated once for a seamless loop -->
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+					</div>
+				</div>
+			</section>
 
-        <div class="project-hero__showcase reveal">
-          <div class="browser-frame" id="tiltFrame">
-            <div class="browser-frame__bar">
-              <span class="browser-frame__dot"></span>
-              <span class="browser-frame__dot"></span>
-              <span class="browser-frame__dot"></span>
-              <span class="browser-frame__url">vault-finance.app</span>
-            </div>
-            <img src="https://placehold.co/1400x820/EEF1FF/3A5CFF?text=Vault+Dashboard" alt="Vault dashboard main screen showing spending overview" />
-          </div>
-        </div>
-      </div>
+			<!-- ============ OVERVIEW ============ -->
+			<section class="overview" id="overview">
+				<div class="container">
+					<div class="overview__grid">
+						<div class="overview__text reveal">
+							<div class="overview__block">
+								<span class="eyebrow">Overview</span>
+								<h2 class="section-title">The problem</h2>
+								<p class="overview__block-text" style="margin-top: 16px">
+									Most budgeting apps either overwhelm people with spreadsheet-like density or oversimplify to the point
+									of being useless for anyone with more than one account. Users wanted a single view of spending,
+									budgets, and investments that stayed readable without hiding the details that matter.
+								</p>
+							</div>
 
-      <!-- "Built with" ticker -->
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
-          <span class="marquee__item"><i data-lucide="code-2"></i>React</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
-          <!-- duplicated once for a seamless loop -->
-          <span class="marquee__item"><i data-lucide="code-2"></i>React</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
-          <span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
-        </div>
-      </div>
-    </section>
+							<div class="overview__block">
+								<h3 class="overview__block-title">The solution</h3>
+								<p class="overview__block-text">
+									I designed and built a dashboard that groups transactions automatically, visualizes budgets against
+									real spending in real time, and lets users drill into any category without leaving the page.
+									Everything updates optimistically so the app feels instant even on slower connections.
+								</p>
+							</div>
 
-    <!-- ============ OVERVIEW ============ -->
-    <section class="overview" id="overview">
-      <div class="container">
-        <div class="overview__grid">
-          <div class="overview__text reveal">
-            <div class="overview__block">
-              <span class="eyebrow">Overview</span>
-              <h2 class="section-title">The problem</h2>
-              <p class="overview__block-text" style="margin-top: 16px;">
-                Most budgeting apps either overwhelm people with spreadsheet-like density
-                or oversimplify to the point of being useless for anyone with more than
-                one account. Users wanted a single view of spending, budgets, and
-                investments that stayed readable without hiding the details that matter.
-              </p>
-            </div>
+							<div class="overview__block">
+								<h3 class="overview__block-title">My role</h3>
+								<p class="overview__block-text">
+									I owned the front end end to end — architecture, component design, state management, charting, and
+									testing — while collaborating with a backend engineer on the API contract and a designer on the visual
+									system.
+								</p>
+							</div>
+						</div>
 
-            <div class="overview__block">
-              <h3 class="overview__block-title">The solution</h3>
-              <p class="overview__block-text">
-                I designed and built a dashboard that groups transactions automatically,
-                visualizes budgets against real spending in real time, and lets users drill
-                into any category without leaving the page. Everything updates optimistically
-                so the app feels instant even on slower connections.
-              </p>
-            </div>
+						<aside class="quick-facts reveal">
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Client</span>
+								<span class="quick-facts__value">Personal / Side Project</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Timeline</span>
+								<span class="quick-facts__value">4 months</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Team Size</span>
+								<span class="quick-facts__value">Solo (+ 1 backend)</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">My Role</span>
+								<span class="quick-facts__value">Front-End Developer</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Platform</span>
+								<span class="quick-facts__value">Web (responsive)</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Status</span>
+								<span class="quick-facts__value">Live</span>
+							</div>
 
-            <div class="overview__block">
-              <h3 class="overview__block-title">My role</h3>
-              <p class="overview__block-text">
-                I owned the front end end to end — architecture, component design, state
-                management, charting, and testing — while collaborating with a backend
-                engineer on the API contract and a designer on the visual system.
-              </p>
-            </div>
-          </div>
+							<div class="quick-facts__links">
+								<a href="#" class="btn btn--primary">
+									<i data-lucide="external-link" aria-hidden="true"></i>
+									Live Site
+								</a>
+								<a href="#" class="btn btn--secondary">
+									<i data-lucide="github" aria-hidden="true"></i>
+									Source Code
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
 
-          <aside class="quick-facts reveal">
-            <div class="quick-facts__row">
-              <span class="quick-facts__label">Client</span>
-              <span class="quick-facts__value">Personal / Side Project</span>
-            </div>
-            <div class="quick-facts__row">
-              <span class="quick-facts__label">Timeline</span>
-              <span class="quick-facts__value">4 months</span>
-            </div>
-            <div class="quick-facts__row">
-              <span class="quick-facts__label">Team Size</span>
-              <span class="quick-facts__value">Solo (+ 1 backend)</span>
-            </div>
-            <div class="quick-facts__row">
-              <span class="quick-facts__label">My Role</span>
-              <span class="quick-facts__value">Front-End Developer</span>
-            </div>
-            <div class="quick-facts__row">
-              <span class="quick-facts__label">Platform</span>
-              <span class="quick-facts__value">Web (responsive)</span>
-            </div>
-            <div class="quick-facts__row">
-              <span class="quick-facts__label">Status</span>
-              <span class="quick-facts__value">Live</span>
-            </div>
+			<!-- ============ GALLERY ============ -->
+			<section class="gallery" id="gallery">
+				<div class="container">
+					<div class="section-header reveal">
+						<span class="eyebrow">Gallery</span>
+						<h2 class="section-title">A closer look.</h2>
+						<p class="section-subtitle">Screenshots from across the app — click any image to view it larger.</p>
+					</div>
 
-            <div class="quick-facts__links">
-              <a href="#" class="btn btn--primary">
-                <i data-lucide="external-link" aria-hidden="true"></i>
-                Live Site
-              </a>
-              <a href="#" class="btn btn--secondary">
-                <i data-lucide="github" aria-hidden="true"></i>
-                Source Code
-              </a>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
+					<div class="gallery-grid" id="galleryGrid">
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/EEF1FF/3A5CFF?text=Dashboard+Overview"
+						>
+							<img
+								src="https://placehold.co/700x520/EEF1FF/3A5CFF?text=Dashboard+Overview"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/F5F1FF/8B5CF6?text=Budget+Breakdown"
+						>
+							<img
+								src="https://placehold.co/700x520/F5F1FF/8B5CF6?text=Budget+Breakdown"
+								alt="Budget breakdown screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/FDF3E4/E8983D?text=Transactions"
+						>
+							<img src="https://placehold.co/700x520/FDF3E4/E8983D?text=Transactions" alt="Transactions list screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/E4F7F4/2BB8A8?text=Investments"
+						>
+							<img
+								src="https://placehold.co/700x520/E4F7F4/2BB8A8?text=Investments"
+								alt="Investments overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/EEF1FF/3A5CFF?text=Category+Detail"
+						>
+							<img
+								src="https://placehold.co/700x520/EEF1FF/3A5CFF?text=Category+Detail"
+								alt="Category detail drill-down screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/F5F1FF/8B5CF6?text=Mobile+View"
+						>
+							<img
+								src="https://placehold.co/700x520/F5F1FF/8B5CF6?text=Mobile+View"
+								alt="Responsive mobile view of the dashboard"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/FDF3E4/E8983D?text=Dark+Mode"
+						>
+							<img
+								src="https://placehold.co/700x520/FDF3E4/E8983D?text=Dark+Mode"
+								alt="Dark mode variant of the dashboard"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="https://placehold.co/1400x900/E4F7F4/2BB8A8?text=Settings"
+						>
+							<img src="https://placehold.co/700x520/E4F7F4/2BB8A8?text=Settings" alt="Account settings screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+					</div>
+				</div>
+			</section>
 
-    <!-- ============ GALLERY ============ -->
-    <section class="gallery" id="gallery">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Gallery</span>
-          <h2 class="section-title">A closer look.</h2>
-          <p class="section-subtitle">Screenshots from across the app — click any image to view it larger.</p>
-        </div>
+			<!-- ============ FEATURES ============ -->
+			<section class="features" id="features">
+				<div class="container">
+					<div class="section-header reveal">
+						<span class="eyebrow">Key Features</span>
+						<h2 class="section-title">What Vault does well.</h2>
+					</div>
 
-        <div class="gallery-grid" id="galleryGrid">
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/EEF1FF/3A5CFF?text=Dashboard+Overview">
-            <img src="https://placehold.co/700x520/EEF1FF/3A5CFF?text=Dashboard+Overview" alt="Dashboard overview screen" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/F5F1FF/8B5CF6?text=Budget+Breakdown">
-            <img src="https://placehold.co/700x520/F5F1FF/8B5CF6?text=Budget+Breakdown" alt="Budget breakdown screen" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/FDF3E4/E8983D?text=Transactions">
-            <img src="https://placehold.co/700x520/FDF3E4/E8983D?text=Transactions" alt="Transactions list screen" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/E4F7F4/2BB8A8?text=Investments">
-            <img src="https://placehold.co/700x520/E4F7F4/2BB8A8?text=Investments" alt="Investments overview screen" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/EEF1FF/3A5CFF?text=Category+Detail">
-            <img src="https://placehold.co/700x520/EEF1FF/3A5CFF?text=Category+Detail" alt="Category detail drill-down screen" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/F5F1FF/8B5CF6?text=Mobile+View">
-            <img src="https://placehold.co/700x520/F5F1FF/8B5CF6?text=Mobile+View" alt="Responsive mobile view of the dashboard" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/FDF3E4/E8983D?text=Dark+Mode">
-            <img src="https://placehold.co/700x520/FDF3E4/E8983D?text=Dark+Mode" alt="Dark mode variant of the dashboard" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="gallery-item reveal" data-full="https://placehold.co/1400x900/E4F7F4/2BB8A8?text=Settings">
-            <img src="https://placehold.co/700x520/E4F7F4/2BB8A8?text=Settings" alt="Account settings screen" />
-            <span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
-          </button>
-        </div>
-      </div>
-    </section>
+					<div class="features-grid">
+						<div class="feature-card reveal">
+							<span class="icon-chip icon-chip--blue"><i data-lucide="pie-chart" aria-hidden="true"></i></span>
+							<h3 class="feature-card__title">Real-Time Budgets</h3>
+							<p class="feature-card__text">
+								Budgets update the moment a transaction lands, with visual warnings before a category goes over.
+							</p>
+						</div>
+						<div class="feature-card reveal">
+							<span class="icon-chip icon-chip--purple"><i data-lucide="zap" aria-hidden="true"></i></span>
+							<h3 class="feature-card__title">Optimistic UI</h3>
+							<p class="feature-card__text">
+								Every action feels instant — the UI updates immediately and reconciles quietly with the server.
+							</p>
+						</div>
+						<div class="feature-card reveal">
+							<span class="icon-chip icon-chip--amber"><i data-lucide="layout-grid" aria-hidden="true"></i></span>
+							<h3 class="feature-card__title">Custom Data Grid</h3>
+							<p class="feature-card__text">
+								A virtualized transaction table that stays smooth past 10,000 rows, with inline editing.
+							</p>
+						</div>
+						<div class="feature-card reveal">
+							<span class="icon-chip icon-chip--teal"><i data-lucide="shield-check" aria-hidden="true"></i></span>
+							<h3 class="feature-card__title">Secure by Default</h3>
+							<p class="feature-card__text">
+								Sensitive fields are encrypted client-side before transit, with session auto-lock after inactivity.
+							</p>
+						</div>
+						<div class="feature-card reveal">
+							<span class="icon-chip icon-chip--blue"><i data-lucide="smartphone" aria-hidden="true"></i></span>
+							<h3 class="feature-card__title">Fully Responsive</h3>
+							<p class="feature-card__text">
+								A distinct, touch-friendly mobile layout rather than a squeezed-down version of the desktop view.
+							</p>
+						</div>
+						<div class="feature-card reveal">
+							<span class="icon-chip icon-chip--purple"><i data-lucide="moon" aria-hidden="true"></i></span>
+							<h3 class="feature-card__title">Light &amp; Dark Mode</h3>
+							<p class="feature-card__text">
+								A full dark theme built on the same design tokens, switchable instantly with no flash.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <!-- ============ FEATURES ============ -->
-    <section class="features" id="features">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Key Features</span>
-          <h2 class="section-title">What Vault does well.</h2>
-        </div>
+			<!-- ============ TECH STACK ============ -->
+			<section class="tech-stack" id="tech-stack">
+				<div class="container">
+					<div class="section-header reveal">
+						<span class="eyebrow">Tech Stack</span>
+						<h2 class="section-title">How it's built.</h2>
+					</div>
 
-        <div class="features-grid">
-          <div class="feature-card reveal">
-            <span class="icon-chip icon-chip--blue"><i data-lucide="pie-chart" aria-hidden="true"></i></span>
-            <h3 class="feature-card__title">Real-Time Budgets</h3>
-            <p class="feature-card__text">Budgets update the moment a transaction lands, with visual warnings before a category goes over.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="icon-chip icon-chip--purple"><i data-lucide="zap" aria-hidden="true"></i></span>
-            <h3 class="feature-card__title">Optimistic UI</h3>
-            <p class="feature-card__text">Every action feels instant — the UI updates immediately and reconciles quietly with the server.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="icon-chip icon-chip--amber"><i data-lucide="layout-grid" aria-hidden="true"></i></span>
-            <h3 class="feature-card__title">Custom Data Grid</h3>
-            <p class="feature-card__text">A virtualized transaction table that stays smooth past 10,000 rows, with inline editing.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="icon-chip icon-chip--teal"><i data-lucide="shield-check" aria-hidden="true"></i></span>
-            <h3 class="feature-card__title">Secure by Default</h3>
-            <p class="feature-card__text">Sensitive fields are encrypted client-side before transit, with session auto-lock after inactivity.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="icon-chip icon-chip--blue"><i data-lucide="smartphone" aria-hidden="true"></i></span>
-            <h3 class="feature-card__title">Fully Responsive</h3>
-            <p class="feature-card__text">A distinct, touch-friendly mobile layout rather than a squeezed-down version of the desktop view.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="icon-chip icon-chip--purple"><i data-lucide="moon" aria-hidden="true"></i></span>
-            <h3 class="feature-card__title">Light &amp; Dark Mode</h3>
-            <p class="feature-card__text">A full dark theme built on the same design tokens, switchable instantly with no flash.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+					<div class="tech-groups">
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="monitor" aria-hidden="true"></i>Frontend</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">React</li>
+								<li class="badge badge--tag">TypeScript</li>
+								<li class="badge badge--tag">Redux Toolkit</li>
+								<li class="badge badge--tag">RTK Query</li>
+								<li class="badge badge--tag">MUI</li>
+								<li class="badge badge--tag">Recharts</li>
+							</ul>
+						</div>
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="server" aria-hidden="true"></i>Backend &amp; Data</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">NestJS</li>
+								<li class="badge badge--tag">PostgreSQL</li>
+								<li class="badge badge--tag">TypeORM</li>
+								<li class="badge badge--tag">REST API</li>
+							</ul>
+						</div>
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="hammer" aria-hidden="true"></i>Tooling</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">Vite</li>
+								<li class="badge badge--tag">ESLint</li>
+								<li class="badge badge--tag">Docker</li>
+								<li class="badge badge--tag">GitHub Actions</li>
+							</ul>
+						</div>
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="flask-conical" aria-hidden="true"></i>Testing</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">Cypress</li>
+								<li class="badge badge--tag">Storybook</li>
+								<li class="badge badge--tag">BDD / Gherkin</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <!-- ============ TECH STACK ============ -->
-    <section class="tech-stack" id="tech-stack">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Tech Stack</span>
-          <h2 class="section-title">How it's built.</h2>
-        </div>
+			<!-- ============ CHALLENGES & SOLUTIONS ============ -->
+			<section class="challenges" id="challenges">
+				<div class="container">
+					<div class="section-header reveal">
+						<span class="eyebrow">Challenges</span>
+						<h2 class="section-title">Problems worth solving.</h2>
+					</div>
 
-        <div class="tech-groups">
-          <div class="tech-group reveal">
-            <span class="tech-group__title"><i data-lucide="monitor" aria-hidden="true"></i>Frontend</span>
-            <ul class="badge-list">
-              <li class="badge badge--tag">React</li>
-              <li class="badge badge--tag">TypeScript</li>
-              <li class="badge badge--tag">Redux Toolkit</li>
-              <li class="badge badge--tag">RTK Query</li>
-              <li class="badge badge--tag">MUI</li>
-              <li class="badge badge--tag">Recharts</li>
-            </ul>
-          </div>
-          <div class="tech-group reveal">
-            <span class="tech-group__title"><i data-lucide="server" aria-hidden="true"></i>Backend &amp; Data</span>
-            <ul class="badge-list">
-              <li class="badge badge--tag">NestJS</li>
-              <li class="badge badge--tag">PostgreSQL</li>
-              <li class="badge badge--tag">TypeORM</li>
-              <li class="badge badge--tag">REST API</li>
-            </ul>
-          </div>
-          <div class="tech-group reveal">
-            <span class="tech-group__title"><i data-lucide="hammer" aria-hidden="true"></i>Tooling</span>
-            <ul class="badge-list">
-              <li class="badge badge--tag">Vite</li>
-              <li class="badge badge--tag">ESLint</li>
-              <li class="badge badge--tag">Docker</li>
-              <li class="badge badge--tag">GitHub Actions</li>
-            </ul>
-          </div>
-          <div class="tech-group reveal">
-            <span class="tech-group__title"><i data-lucide="flask-conical" aria-hidden="true"></i>Testing</span>
-            <ul class="badge-list">
-              <li class="badge badge--tag">Cypress</li>
-              <li class="badge badge--tag">Storybook</li>
-              <li class="badge badge--tag">BDD / Gherkin</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+					<div class="challenges-list">
+						<div class="accordion-item reveal">
+							<button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-1-body">
+								<span class="accordion-item__header-left">
+									<span class="accordion-item__index">01</span>
+									<span class="accordion-item__title">Rendering 10,000+ transactions without jank</span>
+								</span>
+								<i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
+							</button>
+							<div class="accordion-item__body" id="ch-1-body">
+								<div class="accordion-item__body-inner">
+									<p class="accordion-item__content">
+										Early builds of the transaction table dropped frames past a few thousand rows. I rebuilt it as a
+										virtualized grid that only renders visible rows, combined with memoized row components, which
+										brought scroll performance back to a consistent 60fps regardless of dataset size.
+									</p>
+								</div>
+							</div>
+						</div>
 
-    <!-- ============ CHALLENGES & SOLUTIONS ============ -->
-    <section class="challenges" id="challenges">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Challenges</span>
-          <h2 class="section-title">Problems worth solving.</h2>
-        </div>
+						<div class="accordion-item reveal">
+							<button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-2-body">
+								<span class="accordion-item__header-left">
+									<span class="accordion-item__index">02</span>
+									<span class="accordion-item__title">Keeping budgets in sync across tabs</span>
+								</span>
+								<i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
+							</button>
+							<div class="accordion-item__body" id="ch-2-body">
+								<div class="accordion-item__body-inner">
+									<p class="accordion-item__content">
+										Users often had the app open in multiple tabs, which caused budget totals to drift out of sync. I
+										introduced a BroadcastChannel-based store sync so state updates in one tab propagate to every other
+										open tab instantly.
+									</p>
+								</div>
+							</div>
+						</div>
 
-        <div class="challenges-list">
-          <div class="accordion-item reveal">
-            <button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-1-body">
-              <span class="accordion-item__header-left">
-                <span class="accordion-item__index">01</span>
-                <span class="accordion-item__title">Rendering 10,000+ transactions without jank</span>
-              </span>
-              <i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
-            </button>
-            <div class="accordion-item__body" id="ch-1-body">
-              <div class="accordion-item__body-inner">
-                <p class="accordion-item__content">
-                  Early builds of the transaction table dropped frames past a few thousand
-                  rows. I rebuilt it as a virtualized grid that only renders visible rows,
-                  combined with memoized row components, which brought scroll performance
-                  back to a consistent 60fps regardless of dataset size.
-                </p>
-              </div>
-            </div>
-          </div>
+						<div class="accordion-item reveal">
+							<button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-3-body">
+								<span class="accordion-item__header-left">
+									<span class="accordion-item__index">03</span>
+									<span class="accordion-item__title">Optimistic updates without inconsistent state</span>
+								</span>
+								<i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
+							</button>
+							<div class="accordion-item__body" id="ch-3-body">
+								<div class="accordion-item__body-inner">
+									<p class="accordion-item__content">
+										Optimistic UI made the app feel fast, but failed requests occasionally left the UI out of sync with
+										the server. I standardized rollback logic in RTK Query's cache lifecycle so every mutation cleanly
+										reverts on failure.
+									</p>
+								</div>
+							</div>
+						</div>
 
-          <div class="accordion-item reveal">
-            <button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-2-body">
-              <span class="accordion-item__header-left">
-                <span class="accordion-item__index">02</span>
-                <span class="accordion-item__title">Keeping budgets in sync across tabs</span>
-              </span>
-              <i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
-            </button>
-            <div class="accordion-item__body" id="ch-2-body">
-              <div class="accordion-item__body-inner">
-                <p class="accordion-item__content">
-                  Users often had the app open in multiple tabs, which caused budget totals
-                  to drift out of sync. I introduced a BroadcastChannel-based store sync so
-                  state updates in one tab propagate to every other open tab instantly.
-                </p>
-              </div>
-            </div>
-          </div>
+						<div class="accordion-item reveal">
+							<button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-4-body">
+								<span class="accordion-item__header-left">
+									<span class="accordion-item__index">04</span>
+									<span class="accordion-item__title">Designing a dark mode that didn't feel bolted on</span>
+								</span>
+								<i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
+							</button>
+							<div class="accordion-item__body" id="ch-4-body">
+								<div class="accordion-item__body-inner">
+									<p class="accordion-item__content">
+										Rather than inverting colors, I rebuilt the palette around semantic design tokens so light and dark
+										mode share the same component code and switch instantly with no flash of unstyled content on load.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-          <div class="accordion-item reveal">
-            <button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-3-body">
-              <span class="accordion-item__header-left">
-                <span class="accordion-item__index">03</span>
-                <span class="accordion-item__title">Optimistic updates without inconsistent state</span>
-              </span>
-              <i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
-            </button>
-            <div class="accordion-item__body" id="ch-3-body">
-              <div class="accordion-item__body-inner">
-                <p class="accordion-item__content">
-                  Optimistic UI made the app feel fast, but failed requests occasionally left
-                  the UI out of sync with the server. I standardized rollback logic in RTK
-                  Query's cache lifecycle so every mutation cleanly reverts on failure.
-                </p>
-              </div>
-            </div>
-          </div>
+			<!-- ============ RESULTS / IMPACT ============ -->
+			<section class="results" id="results">
+				<div class="container">
+					<div class="section-header reveal">
+						<span class="eyebrow">Results</span>
+						<h2 class="section-title">Impact so far.</h2>
+					</div>
 
-          <div class="accordion-item reveal">
-            <button type="button" class="accordion-item__header" aria-expanded="false" aria-controls="ch-4-body">
-              <span class="accordion-item__header-left">
-                <span class="accordion-item__index">04</span>
-                <span class="accordion-item__title">Designing a dark mode that didn't feel bolted on</span>
-              </span>
-              <i data-lucide="chevron-down" class="accordion-item__chevron" aria-hidden="true"></i>
-            </button>
-            <div class="accordion-item__body" id="ch-4-body">
-              <div class="accordion-item__body-inner">
-                <p class="accordion-item__content">
-                  Rather than inverting colors, I rebuilt the palette around semantic design
-                  tokens so light and dark mode share the same component code and switch
-                  instantly with no flash of unstyled content on load.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+					<div class="results-grid">
+						<div class="result-card reveal">
+							<span class="result-card__number" data-count-to="60" data-suffix="fps">0fps</span>
+							<span class="result-card__label">Steady scroll performance</span>
+						</div>
+						<div class="result-card reveal">
+							<span class="result-card__number" data-count-to="42" data-suffix="%">0%</span>
+							<span class="result-card__label">Faster time-to-interactive</span>
+						</div>
+						<div class="result-card reveal">
+							<span class="result-card__number" data-count-to="3200" data-suffix="+">0+</span>
+							<span class="result-card__label">Active users</span>
+						</div>
+						<div class="result-card reveal">
+							<span class="result-card__number" data-count-to="99" data-suffix=".9%">0%</span>
+							<span class="result-card__label">Uptime over 6 months</span>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <!-- ============ RESULTS / IMPACT ============ -->
-    <section class="results" id="results">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Results</span>
-          <h2 class="section-title">Impact so far.</h2>
-        </div>
+			<!-- ============ CTA ============ -->
+			<section class="cta-section" id="cta">
+				<div class="container">
+					<div class="project-cta reveal">
+						<h2 class="project-cta__title">Want to see it in action?</h2>
+						<p class="project-cta__text">
+							Explore the live app or dig into the source on GitHub — happy to walk through any part of the
+							implementation in more detail.
+						</p>
+						<div class="project-cta__actions">
+							<a href="#" class="btn btn--primary">
+								<i data-lucide="external-link" aria-hidden="true"></i>
+								View Live Site
+							</a>
+							<a href="#" class="btn btn--secondary">
+								<i data-lucide="github" aria-hidden="true"></i>
+								View on GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-        <div class="results-grid">
-          <div class="result-card reveal">
-            <span class="result-card__number" data-count-to="60" data-suffix="fps">0fps</span>
-            <span class="result-card__label">Steady scroll performance</span>
-          </div>
-          <div class="result-card reveal">
-            <span class="result-card__number" data-count-to="42" data-suffix="%">0%</span>
-            <span class="result-card__label">Faster time-to-interactive</span>
-          </div>
-          <div class="result-card reveal">
-            <span class="result-card__number" data-count-to="3200" data-suffix="+">0+</span>
-            <span class="result-card__label">Active users</span>
-          </div>
-          <div class="result-card reveal">
-            <span class="result-card__number" data-count-to="99" data-suffix=".9%">0%</span>
-            <span class="result-card__label">Uptime over 6 months</span>
-          </div>
-        </div>
-      </div>
-    </section>
+		<footer class="footer">
+			<div class="container footer__container">
+				<p class="footer__copy">© 2026 Alireza Rahmani. Built with care.</p>
+				<a href="index.html" class="footer__back">← Back to Portfolio</a>
+			</div>
+		</footer>
 
-    <!-- ============ CTA ============ -->
-    <section class="cta-section" id="cta">
-      <div class="container">
-        <div class="project-cta reveal">
-          <h2 class="project-cta__title">Want to see it in action?</h2>
-          <p class="project-cta__text">
-            Explore the live app or dig into the source on GitHub — happy to walk through
-            any part of the implementation in more detail.
-          </p>
-          <div class="project-cta__actions">
-            <a href="#" class="btn btn--primary">
-              <i data-lucide="external-link" aria-hidden="true"></i>
-              View Live Site
-            </a>
-            <a href="#" class="btn btn--secondary">
-              <i data-lucide="github" aria-hidden="true"></i>
-              View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- ============ LIGHTBOX (populated by JS) ============ -->
+		<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+			<button type="button" class="lightbox__btn lightbox__close" id="lightboxClose" aria-label="Close">
+				<i data-lucide="x" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="lightbox__btn lightbox__prev" id="lightboxPrev" aria-label="Previous image">
+				<i data-lucide="chevron-left" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="lightbox__btn lightbox__next" id="lightboxNext" aria-label="Next image">
+				<i data-lucide="chevron-right" aria-hidden="true"></i>
+			</button>
+			<figure class="lightbox__figure">
+				<img class="lightbox__image" id="lightboxImage" src="" alt="" />
+				<figcaption class="lightbox__counter" id="lightboxCounter"></figcaption>
+			</figure>
+		</div>
 
-  </main>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				if (window.lucide) lucide.createIcons();
 
-  <footer class="footer">
-    <div class="container footer__container">
-      <p class="footer__copy">© 2026 Alireza Rahmani. Built with care.</p>
-      <a href="index.html" class="footer__back">← Back to Portfolio</a>
-    </div>
-  </footer>
+				var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  <!-- ============ LIGHTBOX (populated by JS) ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
-    <button type="button" class="lightbox__btn lightbox__close" id="lightboxClose" aria-label="Close">
-      <i data-lucide="x" aria-hidden="true"></i>
-    </button>
-    <button type="button" class="lightbox__btn lightbox__prev" id="lightboxPrev" aria-label="Previous image">
-      <i data-lucide="chevron-left" aria-hidden="true"></i>
-    </button>
-    <button type="button" class="lightbox__btn lightbox__next" id="lightboxNext" aria-label="Next image">
-      <i data-lucide="chevron-right" aria-hidden="true"></i>
-    </button>
-    <figure class="lightbox__figure">
-      <img class="lightbox__image" id="lightboxImage" src="" alt="" />
-      <figcaption class="lightbox__counter" id="lightboxCounter"></figcaption>
-    </figure>
-  </div>
+				// ---------------------------------------------------------
+				// Scroll reveal
+				// ---------------------------------------------------------
+				var revealEls = document.querySelectorAll(".reveal");
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (window.lucide) lucide.createIcons();
+				if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+					revealEls.forEach(function (el) {
+						el.classList.add("is-visible");
+					});
+				} else {
+					var revealObserver = new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (entry) {
+								if (entry.isIntersecting) {
+									entry.target.classList.add("is-visible");
+									revealObserver.unobserve(entry.target);
+								}
+							});
+						},
+						{ threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+					);
 
-      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+					revealEls.forEach(function (el) {
+						revealObserver.observe(el);
+					});
+				}
 
-      // ---------------------------------------------------------
-      // Scroll reveal
-      // ---------------------------------------------------------
-      var revealEls = document.querySelectorAll('.reveal');
+				// ---------------------------------------------------------
+				// Hero showcase tilt (pointer devices only, respects reduced motion)
+				// ---------------------------------------------------------
+				var tiltFrame = document.getElementById("tiltFrame");
+				var supportsHover = window.matchMedia("(hover: hover)").matches;
 
-      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-      } else {
-        var revealObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+				if (tiltFrame && supportsHover && !prefersReducedMotion) {
+					tiltFrame.addEventListener("mousemove", function (e) {
+						var rect = tiltFrame.getBoundingClientRect();
+						var x = (e.clientX - rect.left) / rect.width - 0.5;
+						var y = (e.clientY - rect.top) / rect.height - 0.5;
+						tiltFrame.style.transform = "perspective(1200px) rotateX(" + y * -6 + "deg) rotateY(" + x * 6 + "deg)";
+					});
 
-        revealEls.forEach(function (el) { revealObserver.observe(el); });
-      }
+					tiltFrame.addEventListener("mouseleave", function () {
+						tiltFrame.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg)";
+					});
+				}
 
-      // ---------------------------------------------------------
-      // Hero showcase tilt (pointer devices only, respects reduced motion)
-      // ---------------------------------------------------------
-      var tiltFrame = document.getElementById('tiltFrame');
-      var supportsHover = window.matchMedia('(hover: hover)').matches;
+				// ---------------------------------------------------------
+				// Gallery lightbox
+				// ---------------------------------------------------------
+				var galleryItems = Array.prototype.slice.call(document.querySelectorAll(".gallery-item"));
+				var lightbox = document.getElementById("lightbox");
+				var lightboxImage = document.getElementById("lightboxImage");
+				var lightboxCounter = document.getElementById("lightboxCounter");
+				var currentIndex = 0;
 
-      if (tiltFrame && supportsHover && !prefersReducedMotion) {
-        tiltFrame.addEventListener('mousemove', function (e) {
-          var rect = tiltFrame.getBoundingClientRect();
-          var x = (e.clientX - rect.left) / rect.width - 0.5;
-          var y = (e.clientY - rect.top) / rect.height - 0.5;
-          tiltFrame.style.transform =
-            'perspective(1200px) rotateX(' + (y * -6) + 'deg) rotateY(' + (x * 6) + 'deg)';
-        });
+				function openLightbox(index) {
+					currentIndex = index;
+					updateLightboxImage();
+					lightbox.classList.add("is-open");
+					document.body.style.overflow = "hidden";
+				}
 
-        tiltFrame.addEventListener('mouseleave', function () {
-          tiltFrame.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
-        });
-      }
+				function closeLightbox() {
+					lightbox.classList.remove("is-open");
+					document.body.style.overflow = "";
+				}
 
-      // ---------------------------------------------------------
-      // Gallery lightbox
-      // ---------------------------------------------------------
-      var galleryItems = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
-      var lightbox = document.getElementById('lightbox');
-      var lightboxImage = document.getElementById('lightboxImage');
-      var lightboxCounter = document.getElementById('lightboxCounter');
-      var currentIndex = 0;
+				function updateLightboxImage() {
+					var item = galleryItems[currentIndex];
+					var full = item.getAttribute("data-full");
+					var alt = item.querySelector("img").getAttribute("alt");
+					lightboxImage.src = full;
+					lightboxImage.alt = alt;
+					lightboxCounter.textContent = currentIndex + 1 + " / " + galleryItems.length;
+				}
 
-      function openLightbox(index) {
-        currentIndex = index;
-        updateLightboxImage();
-        lightbox.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      }
+				function showNext() {
+					currentIndex = (currentIndex + 1) % galleryItems.length;
+					updateLightboxImage();
+				}
 
-      function closeLightbox() {
-        lightbox.classList.remove('is-open');
-        document.body.style.overflow = '';
-      }
+				function showPrev() {
+					currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+					updateLightboxImage();
+				}
 
-      function updateLightboxImage() {
-        var item = galleryItems[currentIndex];
-        var full = item.getAttribute('data-full');
-        var alt = item.querySelector('img').getAttribute('alt');
-        lightboxImage.src = full;
-        lightboxImage.alt = alt;
-        lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryItems.length;
-      }
+				galleryItems.forEach(function (item, index) {
+					item.addEventListener("click", function () {
+						openLightbox(index);
+					});
+				});
 
-      function showNext() {
-        currentIndex = (currentIndex + 1) % galleryItems.length;
-        updateLightboxImage();
-      }
+				document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+				document.getElementById("lightboxNext").addEventListener("click", showNext);
+				document.getElementById("lightboxPrev").addEventListener("click", showPrev);
 
-      function showPrev() {
-        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-        updateLightboxImage();
-      }
+				lightbox.addEventListener("click", function (e) {
+					if (e.target === lightbox) closeLightbox();
+				});
 
-      galleryItems.forEach(function (item, index) {
-        item.addEventListener('click', function () { openLightbox(index); });
-      });
+				document.addEventListener("keydown", function (e) {
+					if (!lightbox.classList.contains("is-open")) return;
+					if (e.key === "Escape") closeLightbox();
+					if (e.key === "ArrowRight") showNext();
+					if (e.key === "ArrowLeft") showPrev();
+				});
 
-      document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-      document.getElementById('lightboxNext').addEventListener('click', showNext);
-      document.getElementById('lightboxPrev').addEventListener('click', showPrev);
+				// ---------------------------------------------------------
+				// Accordion (challenges & solutions)
+				// ---------------------------------------------------------
+				document.querySelectorAll(".accordion-item__header").forEach(function (btn) {
+					btn.addEventListener("click", function () {
+						var item = btn.closest(".accordion-item");
+						var expanded = btn.getAttribute("aria-expanded") === "true";
+						var panel = document.getElementById(btn.getAttribute("aria-controls"));
 
-      lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox) closeLightbox();
-      });
+						btn.setAttribute("aria-expanded", String(!expanded));
+						item.classList.toggle("is-open", !expanded);
+						if (panel) panel.classList.toggle("is-open", !expanded);
+					});
+				});
 
-      document.addEventListener('keydown', function (e) {
-        if (!lightbox.classList.contains('is-open')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') showNext();
-        if (e.key === 'ArrowLeft') showPrev();
-      });
+				// ---------------------------------------------------------
+				// Animated result counters
+				// ---------------------------------------------------------
+				var counters = document.querySelectorAll(".result-card__number");
 
-      // ---------------------------------------------------------
-      // Accordion (challenges & solutions)
-      // ---------------------------------------------------------
-      document.querySelectorAll('.accordion-item__header').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var item = btn.closest('.accordion-item');
-          var expanded = btn.getAttribute('aria-expanded') === 'true';
-          var panel = document.getElementById(btn.getAttribute('aria-controls'));
+				function animateCounter(el) {
+					var target = parseFloat(el.getAttribute("data-count-to"));
+					var suffix = el.getAttribute("data-suffix") || "";
+					var isDecimal = target % 1 !== 0;
 
-          btn.setAttribute('aria-expanded', String(!expanded));
-          item.classList.toggle('is-open', !expanded);
-          if (panel) panel.classList.toggle('is-open', !expanded);
-        });
-      });
+					if (prefersReducedMotion) {
+						el.textContent = target + suffix;
+						return;
+					}
 
-      // ---------------------------------------------------------
-      // Animated result counters
-      // ---------------------------------------------------------
-      var counters = document.querySelectorAll('.result-card__number');
+					var duration = 1400;
+					var start = null;
 
-      function animateCounter(el) {
-        var target = parseFloat(el.getAttribute('data-count-to'));
-        var suffix = el.getAttribute('data-suffix') || '';
-        var isDecimal = target % 1 !== 0;
+					function step(timestamp) {
+						if (!start) start = timestamp;
+						var progress = Math.min((timestamp - start) / duration, 1);
+						var eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+						var value = target * eased;
+						el.textContent = (isDecimal ? value.toFixed(1) : Math.round(value)) + suffix;
+						if (progress < 1) requestAnimationFrame(step);
+					}
 
-        if (prefersReducedMotion) {
-          el.textContent = target + suffix;
-          return;
-        }
+					requestAnimationFrame(step);
+				}
 
-        var duration = 1400;
-        var start = null;
+				if ("IntersectionObserver" in window) {
+					var counterObserver = new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (entry) {
+								if (entry.isIntersecting) {
+									animateCounter(entry.target);
+									counterObserver.unobserve(entry.target);
+								}
+							});
+						},
+						{ threshold: 0.5 },
+					);
 
-        function step(timestamp) {
-          if (!start) start = timestamp;
-          var progress = Math.min((timestamp - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
-          var value = target * eased;
-          el.textContent = (isDecimal ? value.toFixed(1) : Math.round(value)) + suffix;
-          if (progress < 1) requestAnimationFrame(step);
-        }
-
-        requestAnimationFrame(step);
-      }
-
-      if ('IntersectionObserver' in window) {
-        var counterObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              animateCounter(entry.target);
-              counterObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-
-        counters.forEach(function (el) { counterObserver.observe(el); });
-      } else {
-        counters.forEach(animateCounter);
-      }
-    });
-  </script>
-
-</body>
+					counters.forEach(function (el) {
+						counterObserver.observe(el);
+					});
+				} else {
+					counters.forEach(animateCounter);
+				}
+			});
+		</script>
+	</body>
 </html>

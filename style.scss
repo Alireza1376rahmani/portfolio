@@ -632,7 +632,8 @@ section {
 		align-items: start;
 
 		@include bp($bp-tablet) {
-			grid-template-columns: 1fr;
+			// grid-template-columns: 1fr;
+			display: none;
 		}
 	}
 

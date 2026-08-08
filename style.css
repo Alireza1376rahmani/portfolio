@@ -435,7 +435,7 @@ section {
 }
 @media (max-width: 1024px) {
   .about__grid {
-    grid-template-columns: 1fr;
+    display: none;
   }
 }
 .about__media img {

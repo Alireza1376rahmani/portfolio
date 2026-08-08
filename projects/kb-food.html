@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vault — Personal Finance Dashboard | Alireza Rahmani</title>
+		<meta
+			name="description"
+			content="Case study: Vault, a personal finance dashboard built with React, TypeScript, and Redux Toolkit."
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+		<link rel="stylesheet" href="../project.css" />
+	</head>
+	<body>
+		<main>
+			<!-- ============ PROJECT HERO ============ -->
+			<section class="project-hero" id="hero">
+				<div class="project-hero__background" aria-hidden="true">
+					<div class="project-hero__glow project-hero__glow--blue"></div>
+					<div class="project-hero__glow project-hero__glow--purple"></div>
+				</div>
+
+				<div class="container">
+					<div class="back-nav-wrap">
+						<div class="container">
+							<a href="../index.html" class="back-nav">
+								<i data-lucide="arrow-left" aria-hidden="true"></i>
+								Back to Portfolio
+							</a>
+						</div>
+					</div>
+					<div class="project-hero__container reveal">
+						<span class="eyebrow">Case Study — Personal Finance</span>
+						<h1 class="project-hero__title">Vault — Personal Finance Dashboard</h1>
+						<p class="project-hero__tagline">
+							A fast, secure dashboard that helps people track spending, budgets, and investments in one place — built
+							end to end as a solo front-end project.
+						</p>
+
+						<div class="project-hero__actions">
+							<!-- <a href="#" class="btn btn--primary">
+								<i data-lucide="external-link" aria-hidden="true"></i>
+								View Live Site
+							</a> -->
+							<a href="#" class="btn btn--primary">
+								<i data-lucide="github" aria-hidden="true"></i>
+								View on GitHub
+							</a>
+						</div>
+
+						<!-- <div class="project-hero__meta">
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Role</span>
+								<span class="project-hero__meta-value">Front-End Developer</span>
+							</div>
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Timeline</span>
+								<span class="project-hero__meta-value">4 months</span>
+							</div>
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Team</span>
+								<span class="project-hero__meta-value">Solo project</span>
+							</div>
+							<div class="project-hero__meta-item">
+								<span class="project-hero__meta-label">Platform</span>
+								<span class="project-hero__meta-value">Web</span>
+							</div>
+						</div> -->
+					</div>
+
+					<div class="project-hero__showcase reveal">
+						<div class="browser-frame" id="tiltFrame">
+							<div class="browser-frame__bar">
+								<span class="browser-frame__dot"></span>
+								<span class="browser-frame__dot"></span>
+								<span class="browser-frame__dot"></span>
+								<span class="browser-frame__url">kb-foods.app</span>
+							</div>
+							<img
+								src="./../assets/projects/kb-food/Admin user_ Dashboard.png"
+								alt="Vault dashboard main screen showing spending overview"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<!-- "Built with" ticker -->
+				<div class="marquee" aria-hidden="true">
+					<div class="marquee__track">
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>React</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>TypeScript</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Redux Toolkit</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>RTK Query</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>MUI</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Recharts</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Vite</span>
+						<span class="marquee__item"><i data-lucide="code-2"></i>Cypress</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- ============ OVERVIEW ============ -->
+			<section class="overview" id="overview">
+				<div class="container">
+					<div class="overview__grid">
+						<div class="overview__text reveal">
+							<div class="overview__block">
+								<span class="eyebrow">Overview</span>
+								<h2 class="section-title">The problem</h2>
+								<p class="overview__block-text" style="margin-top: 16px">
+									Most budgeting apps either overwhelm people with spreadsheet-like density or oversimplify to the point
+									of being useless for anyone with more than one account. Users wanted a single view of spending,
+									budgets, and investments that stayed readable without hiding the details that matter.
+								</p>
+							</div>
+
+							<div class="overview__block">
+								<h3 class="overview__block-title">The solution</h3>
+								<p class="overview__block-text">
+									I designed and built a dashboard that groups transactions automatically, visualizes budgets against
+									real spending in real time, and lets users drill into any category without leaving the page.
+									Everything updates optimistically so the app feels instant even on slower connections.
+								</p>
+							</div>
+
+							<div class="overview__block">
+								<h3 class="overview__block-title">My role</h3>
+								<p class="overview__block-text">
+									I owned the front end end to end — architecture, component design, state management, charting, and
+									testing — while collaborating with a backend engineer on the API contract and a designer on the visual
+									system.
+								</p>
+							</div>
+						</div>
+
+						<aside class="quick-facts reveal">
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Kickoff Date</span>
+								<span class="quick-facts__value">Jan 2022</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Timeline</span>
+								<span class="quick-facts__value">5 months</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">Team Size</span>
+								<span class="quick-facts__value">Solo (+ 1 backend)</span>
+							</div>
+							<div class="quick-facts__row">
+								<span class="quick-facts__label">My Role</span>
+								<span class="quick-facts__value">Front-End Developer</span>
+							</div>
+
+							<div class="quick-facts__links">
+								<!-- <a href="#" class="btn btn--primary">
+									<i data-lucide="external-link" aria-hidden="true"></i>
+									Live Site
+								</a> -->
+								<a href="#" class="btn btn--primary">
+									<i data-lucide="github" aria-hidden="true"></i>
+									Source Code
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+
+			<!-- ============ GALLERY ============ -->
+			<section class="gallery" id="gallery">
+				<div class="container">
+					<div class="section-header reveal">
+						<span class="eyebrow">Gallery</span>
+						<h2 class="section-title">A closer look.</h2>
+						<p class="section-subtitle">Screenshots from across the app — click any image to view it larger.</p>
+					</div>
+
+					<div class="gallery-grid" id="galleryGrid">
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/Admin user_  Order Giodes.png"
+						>
+							<img src="./../assets/projects/kb-food/Admin user_  Order Giodes.png" alt="Dashboard overview screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button type="button" class="gallery-item reveal" data-full="./../assets/projects/kb-food/404 page.png">
+							<img src="./../assets/projects/kb-food/404 page.png" alt="Dashboard overview screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/Admin user_order details.png"
+						>
+							<img src="./../assets/projects/kb-food/Admin user_order details.png" alt="Dashboard overview screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/Admin user_Orders update.png"
+						>
+							<img src="./../assets/projects/kb-food/Admin user_Orders update.png" alt="Dashboard overview screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/Admin user_Orders.png"
+						>
+							<img src="./../assets/projects/kb-food/Admin user_Orders.png" alt="Dashboard overview screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/Forgot Password _ Fields Completed.png"
+						>
+							<img
+								src="./../assets/projects/kb-food/Forgot Password _ Fields Completed.png"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/Admin user_Products.png"
+						>
+							<img src="./../assets/projects/kb-food/Admin user_Products.png" alt="Dashboard overview screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/Admin user_User Management_District.png"
+						>
+							<img
+								src="./../assets/projects/kb-food/Admin user_User Management_District.png"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/District users_Products.png"
+						>
+							<img src="./../assets/projects/kb-food/District users_Products.png" alt="Dashboard overview screen" />
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/District Sign Up Confirmation-1.png"
+						>
+							<img
+								src="./../assets/projects/kb-food/District Sign Up Confirmation-1.png"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/District users_ Order Giodes_ Add Order Guide.png"
+						>
+							<img
+								src="./../assets/projects/kb-food/District users_ Order Giodes_ Add Order Guide.png"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/District users_New order_ Step 8.png"
+						>
+							<img
+								src="./../assets/projects/kb-food/District users_New order_ Step 8.png"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/District users_New order_ Step 9.png"
+						>
+							<img
+								src="./../assets/projects/kb-food/District users_New order_ Step 9.png"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+						<button
+							type="button"
+							class="gallery-item reveal"
+							data-full="./../assets/projects/kb-food/District users_order details.png"
+						>
+							<img
+								src="./../assets/projects/kb-food/District users_order details.png"
+								alt="Dashboard overview screen"
+							/>
+							<span class="gallery-item__icon"><i data-lucide="maximize-2" aria-hidden="true"></i></span>
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- ============ TECH STACK ============ -->
+			<section class="tech-stack" id="tech-stack">
+				<div class="container">
+					<div class="section-header reveal">
+						<span class="eyebrow">Tech Stack</span>
+						<h2 class="section-title">How it's built.</h2>
+					</div>
+
+					<div class="tech-groups">
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="monitor" aria-hidden="true"></i>Frontend</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">React</li>
+								<li class="badge badge--tag">TypeScript</li>
+								<li class="badge badge--tag">Redux Toolkit</li>
+								<li class="badge badge--tag">RTK Query</li>
+								<li class="badge badge--tag">MUI</li>
+								<li class="badge badge--tag">Recharts</li>
+							</ul>
+						</div>
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="server" aria-hidden="true"></i>Backend &amp; Data</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">NestJS</li>
+								<li class="badge badge--tag">PostgreSQL</li>
+								<li class="badge badge--tag">TypeORM</li>
+								<li class="badge badge--tag">REST API</li>
+							</ul>
+						</div>
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="hammer" aria-hidden="true"></i>Tooling</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">Vite</li>
+								<li class="badge badge--tag">ESLint</li>
+								<li class="badge badge--tag">Docker</li>
+								<li class="badge badge--tag">GitHub Actions</li>
+							</ul>
+						</div>
+						<div class="tech-group reveal">
+							<span class="tech-group__title"><i data-lucide="flask-conical" aria-hidden="true"></i>Testing</span>
+							<ul class="badge-list">
+								<li class="badge badge--tag">Cypress</li>
+								<li class="badge badge--tag">Storybook</li>
+								<li class="badge badge--tag">BDD / Gherkin</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="container footer__container">
+				<p class="footer__copy">© 2026 Alireza Rahmani. Built with care.</p>
+				<a href="index.html" class="footer__back">← Back to Portfolio</a>
+			</div>
+		</footer>
+
+		<!-- ============ LIGHTBOX (populated by JS) ============ -->
+		<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+			<button type="button" class="lightbox__btn lightbox__close" id="lightboxClose" aria-label="Close">
+				<i data-lucide="x" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="lightbox__btn lightbox__prev" id="lightboxPrev" aria-label="Previous image">
+				<i data-lucide="chevron-left" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="lightbox__btn lightbox__next" id="lightboxNext" aria-label="Next image">
+				<i data-lucide="chevron-right" aria-hidden="true"></i>
+			</button>
+			<figure class="lightbox__figure">
+				<img class="lightbox__image" id="lightboxImage" src="" alt="" />
+				<figcaption class="lightbox__counter" id="lightboxCounter"></figcaption>
+			</figure>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				if (window.lucide) lucide.createIcons();
+
+				var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+				// ---------------------------------------------------------
+				// Scroll reveal
+				// ---------------------------------------------------------
+				var revealEls = document.querySelectorAll(".reveal");
+
+				if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+					revealEls.forEach(function (el) {
+						el.classList.add("is-visible");
+					});
+				} else {
+					var revealObserver = new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (entry) {
+								if (entry.isIntersecting) {
+									entry.target.classList.add("is-visible");
+									revealObserver.unobserve(entry.target);
+								}
+							});
+						},
+						{ threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+					);
+
+					revealEls.forEach(function (el) {
+						revealObserver.observe(el);
+					});
+				}
+
+				// ---------------------------------------------------------
+				// Hero showcase tilt (pointer devices only, respects reduced motion)
+				// ---------------------------------------------------------
+				var tiltFrame = document.getElementById("tiltFrame");
+				var supportsHover = window.matchMedia("(hover: hover)").matches;
+
+				if (tiltFrame && supportsHover && !prefersReducedMotion) {
+					tiltFrame.addEventListener("mousemove", function (e) {
+						var rect = tiltFrame.getBoundingClientRect();
+						var x = (e.clientX - rect.left) / rect.width - 0.5;
+						var y = (e.clientY - rect.top) / rect.height - 0.5;
+						tiltFrame.style.transform = "perspective(1200px) rotateX(" + y * -6 + "deg) rotateY(" + x * 6 + "deg)";
+					});
+
+					tiltFrame.addEventListener("mouseleave", function () {
+						tiltFrame.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg)";
+					});
+				}
+
+				// ---------------------------------------------------------
+				// Gallery lightbox
+				// ---------------------------------------------------------
+				var galleryItems = Array.prototype.slice.call(document.querySelectorAll(".gallery-item"));
+				var lightbox = document.getElementById("lightbox");
+				var lightboxImage = document.getElementById("lightboxImage");
+				var lightboxCounter = document.getElementById("lightboxCounter");
+				var currentIndex = 0;
+
+				function openLightbox(index) {
+					currentIndex = index;
+					updateLightboxImage();
+					lightbox.classList.add("is-open");
+					document.body.style.overflow = "hidden";
+				}
+
+				function closeLightbox() {
+					lightbox.classList.remove("is-open");
+					document.body.style.overflow = "";
+				}
+
+				function updateLightboxImage() {
+					var item = galleryItems[currentIndex];
+					var full = item.getAttribute("data-full");
+					var alt = item.querySelector("img").getAttribute("alt");
+					lightboxImage.src = full;
+					lightboxImage.alt = alt;
+					lightboxCounter.textContent = currentIndex + 1 + " / " + galleryItems.length;
+				}
+
+				function showNext() {
+					currentIndex = (currentIndex + 1) % galleryItems.length;
+					updateLightboxImage();
+				}
+
+				function showPrev() {
+					currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+					updateLightboxImage();
+				}
+
+				galleryItems.forEach(function (item, index) {
+					item.addEventListener("click", function () {
+						openLightbox(index);
+					});
+				});
+
+				document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+				document.getElementById("lightboxNext").addEventListener("click", showNext);
+				document.getElementById("lightboxPrev").addEventListener("click", showPrev);
+
+				lightbox.addEventListener("click", function (e) {
+					if (e.target === lightbox) closeLightbox();
+				});
+
+				document.addEventListener("keydown", function (e) {
+					if (!lightbox.classList.contains("is-open")) return;
+					if (e.key === "Escape") closeLightbox();
+					if (e.key === "ArrowRight") showNext();
+					if (e.key === "ArrowLeft") showPrev();
+				});
+
+				// ---------------------------------------------------------
+				// Accordion (challenges & solutions)
+				// ---------------------------------------------------------
+				document.querySelectorAll(".accordion-item__header").forEach(function (btn) {
+					btn.addEventListener("click", function () {
+						var item = btn.closest(".accordion-item");
+						var expanded = btn.getAttribute("aria-expanded") === "true";
+						var panel = document.getElementById(btn.getAttribute("aria-controls"));
+
+						btn.setAttribute("aria-expanded", String(!expanded));
+						item.classList.toggle("is-open", !expanded);
+						if (panel) panel.classList.toggle("is-open", !expanded);
+					});
+				});
+
+				// ---------------------------------------------------------
+				// Animated result counters
+				// ---------------------------------------------------------
+				var counters = document.querySelectorAll(".result-card__number");
+
+				function animateCounter(el) {
+					var target = parseFloat(el.getAttribute("data-count-to"));
+					var suffix = el.getAttribute("data-suffix") || "";
+					var isDecimal = target % 1 !== 0;
+
+					if (prefersReducedMotion) {
+						el.textContent = target + suffix;
+						return;
+					}
+
+					var duration = 1400;
+					var start = null;
+
+					function step(timestamp) {
+						if (!start) start = timestamp;
+						var progress = Math.min((timestamp - start) / duration, 1);
+						var eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+						var value = target * eased;
+						el.textContent = (isDecimal ? value.toFixed(1) : Math.round(value)) + suffix;
+						if (progress < 1) requestAnimationFrame(step);
+					}
+
+					requestAnimationFrame(step);
+				}
+
+				if ("IntersectionObserver" in window) {
+					var counterObserver = new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (entry) {
+								if (entry.isIntersecting) {
+									animateCounter(entry.target);
+									counterObserver.unobserve(entry.target);
+								}
+							});
+						},
+						{ threshold: 0.5 },
+					);
+
+					counters.forEach(function (el) {
+						counterObserver.observe(el);
+					});
+				} else {
+					counters.forEach(animateCounter);
+				}
+			});
+		</script>
+	</body>
+</html>
